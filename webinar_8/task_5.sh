@@ -1,14 +1,13 @@
 #!/bin/bash
 
-files=(*)
+read -p "Enter a directory name: " dir_name
 
-for file in ${files[@]}; do
-	echo "$file"
-done
-
-prefix="back_up"
-backups="backups"
-
-for file in ${files[@]}; do
-	cp "$file" "${prefix}$file"
-done
+if [ -d "$dir_name" ]; then
+	if [ "$(ls -a $dir_name)" ]; then
+		echo "Directory is not empty"
+	else
+		echo "Directory is not empty"
+	fi;
+else
+	echo "Directory does not exist"
+fi;
