@@ -1,6 +1,6 @@
 #/!bin/bash
-echo "Enter a file name: "
-read file_name
+
+read -p "Enter a file name: " file_name
 
 if [ -e $file_name ]; then
 	lines=$(wc -l < "$file_name")
