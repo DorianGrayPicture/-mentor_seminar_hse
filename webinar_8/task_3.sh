@@ -1,8 +1,11 @@
 #!/bin/zsh
 
-read -p "Введите имя директории для архивирования: " directory
+read -p "Enter the directory path or * for current directory: " dir_path
 
-current_datetime=$(date +"%Y-%m-%d %H:%M:%S.%3N")
-tar -cvf "backup_$current_datetime.tar" "$directory"
-
-echo "Архив успешно создан: backup_$current_datetime.tar.gz"
+if [ "$dir_path" == "*" ]; then
+	tar -czvf archive_$(date +%Y-%m-%d).tar.gz .
+elif [ -d "$dir_path" ]; then
+	tar -czvf archive_$(date +%Y-%m-%d).tar.gz -C "$dir_path"
+else
+	echo "Directory does not exist"
+fi;
