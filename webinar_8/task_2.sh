@@ -1,7 +1,8 @@
-echo "Enter a file name: "
-read file_name
+#!/bin/bash
 
-if [ -e $filename ]; then
+read -p "Enter a file name: " filename
+
+if [ -e "$filename" ]; then
 	echo "File exists!"
 else
         echo "File does not exist!"
