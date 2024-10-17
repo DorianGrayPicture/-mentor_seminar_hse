@@ -1,1 +1,1 @@
-# -mentor_seminar_hse
+# Repository for mentor seminar
