@@ -6,7 +6,7 @@ if [ -d "$dir_name" ]; then
 	if [ "$(ls -a $dir_name)" ]; then
 		mkdir -p $dir_name/backup
 		for file in $dir_name/*; do
-			cp "$file" "$dir_name"/backup/backup_$(basename "$file")
+			cp -r "$file" "$dir_name"/backup/backup_$(basename "$file")
 		done
 	else
 		echo "Directory is empty"
